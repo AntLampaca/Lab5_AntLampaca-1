@@ -8,8 +8,12 @@ Date: February 12, 2026
 
 import random
 
+#defining terminology
+
 def get_term(die1, die2) :
     total = die1 + die2
+
+    #matching the dice result to correct term from the dice combination
 
     if die1 == die2 == 1:
         return "Snake Eyes"
@@ -40,18 +44,28 @@ def get_term(die1, die2) :
     else:
         return "no Special Term"
 
-while True:
+# While loop
 
+while True:
+    #dice 1 roll
     die1 = random.randint(1, 6)
+    #dice 2 roll
     die2 = random.randint(1, 6)
+    #dice total from d1 and d2
     total = die1 + die2
+
+    #Dice results presented to user
 
     print(f"Die 1: {die1}")
     print(f"Die 2: {die2}")
     print(f"Total: {total}")
 
+    #matching dice term
+
     term = get_term(die1, die2)
     print("Term: ", term)
+
+    #Loop question to user
 
     choice = input("Roll again? (y/n): ").lower()
     if choice != 'y':
